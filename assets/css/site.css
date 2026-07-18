@@ -1,0 +1,42 @@
+/* O Tailwind da página é pré-compilado: só existem as classes que o build gerou.
+   Estas faltavam para o tema escuro e são declaradas à mão. */
+.border-zinc-800 {
+  border-color: #27272a;
+}
+
+.hover\:border-zinc-700:hover {
+  border-color: #3f3f46;
+}
+
+.hover\:border-red-600\/40:hover {
+  border-color: rgb(220 38 38 / 0.4);
+}
+
+.hover\:bg-red-950\/30:hover {
+  background-color: rgb(69 10 10 / 0.3);
+}
+
+.placeholder\:text-zinc-500::placeholder {
+  color: #71717a;
+}
+
+/* Reveal no scroll — substitui as animações que o framer-motion aplicava inline. */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
